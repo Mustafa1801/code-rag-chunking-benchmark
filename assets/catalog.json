@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "profile": 8,
+  "repository": "code-rag-chunking-benchmark",
+  "reviewed_on": "2026-11-21",
+  "comparison_axes": [
+    "Role",
+    "Project",
+    "Retrieval signal",
+    "Best fit",
+    "Main gap"
+  ],
+  "entries": [
+    {
+      "name": "Fast lexical code search",
+      "role_or_focus": "Zoekt",
+      "url": "https://github.com/sourcegraph/zoekt",
+      "supported_claim": "Trigram-based indexed text search.",
+      "best_use": "Large repositories where fast literal/regex search is central.",
+      "important_boundary": "No semantic understanding by itself.",
+      "claim_status": {
+        "supported_claim": "source-backed",
+        "best_use": "author-recommendation",
+        "important_boundary": "author-analysis"
+      }
+    },
+    {
+      "name": "Cross-reference code search",
+      "role_or_focus": "OpenGrok",
+      "url": "https://github.com/oracle/opengrok",
+      "supported_claim": "Text search plus source navigation and history integrations.",
+      "best_use": "Self-hosted search with browsing across many repositories.",
+      "important_boundary": "Semantic/vector retrieval is outside its core.",
+      "claim_status": {
+        "supported_claim": "source-backed",
+        "best_use": "author-recommendation",
+        "important_boundary": "author-analysis"
+      }
+    },
+    {
+      "name": "Interactive regex search",
+      "role_or_focus": "livegrep",
+      "url": "https://github.com/livegrep/livegrep",
+      "supported_claim": "Indexed regular-expression search.",
+      "best_use": "Low-latency exact pattern discovery.",
+      "important_boundary": "No AST or embedding semantics.",
+      "claim_status": {
+        "supported_claim": "source-backed",
+        "best_use": "author-recommendation",
+        "important_boundary": "author-analysis"
+      }
+    },
+    {
+      "name": "Structural parsing",
+      "role_or_focus": "tree-sitter",
+      "url": "https://github.com/tree-sitter/tree-sitter",
+      "supported_claim": "Concrete syntax trees and incremental parsing.",
+      "best_use": "Create symbol-aware chunks across supported grammars.",
+      "important_boundary": "Parsing alone provides no ranking or cross-file semantics.",
+      "claim_status": {
+        "supported_claim": "source-backed",
+        "best_use": "author-recommendation",
+        "important_boundary": "author-analysis"
+      }
+    },
+    {
+      "name": "Code intelligence index",
+      "role_or_focus": "SCIP",
+      "url": "https://github.com/sourcegraph/scip",
+      "supported_claim": "Language-agnostic protocol for symbols and occurrences.",
+      "best_use": "Add definition/reference relationships produced by indexers.",
+      "important_boundary": "Requires language-specific index generation.",
+      "claim_status": {
+        "supported_claim": "source-backed",
+        "best_use": "author-recommendation",
+        "important_boundary": "author-analysis"
+      }
+    },
+    {
+      "name": "Embedding/vector store",
+      "role_or_focus": "Qdrant",
+      "url": "https://github.com/qdrant/qdrant",
+      "supported_claim": "Vector and payload filtering/search.",
+      "best_use": "Store and retrieve code/document embeddings with metadata.",
+      "important_boundary": "Chunk quality and embedding relevance remain external.",
+      "claim_status": {
+        "supported_claim": "source-backed",
+        "best_use": "author-recommendation",
+        "important_boundary": "author-analysis"
+      }
+    },
+    {
+      "name": "RAG orchestration",
+      "role_or_focus": "LlamaIndex",
+      "url": "https://github.com/run-llama/llama_index",
+      "supported_claim": "Document ingestion, node parsing, retrieval, and evaluation components.",
+      "best_use": "Prototype combined lexical/vector retrieval pipelines.",
+      "important_boundary": "Defaults are not a code-search benchmark.",
+      "claim_status": {
+        "supported_claim": "source-backed",
+        "best_use": "author-recommendation",
+        "important_boundary": "author-analysis"
+      }
+    },
+    {
+      "name": "Code-aware assistant stack",
+      "role_or_focus": "Continue",
+      "url": "https://github.com/continuedev/continue",
+      "supported_claim": "Open-source coding assistant with indexing/context-provider components.",
+      "best_use": "Study an integrated codebase-context implementation.",
+      "important_boundary": "Product behavior couples several retrieval decisions.",
+      "claim_status": {
+        "supported_claim": "source-backed",
+        "best_use": "author-recommendation",
+        "important_boundary": "author-analysis"
+      }
+    }
+  ],
+  "field_provenance": {
+    "supported_claim": "source-backed at the cited URL, subject to the recorded review date/version",
+    "best_use": "author recommendation; requires local validation",
+    "important_boundary": "author analysis unless the linked source explicitly states it"
+  }
+}
