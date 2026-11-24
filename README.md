@@ -1,5 +1,10 @@
 # Code-RAG Chunking Benchmark
 
+
+> **Decision:** Use this benchmark when comparing complete code-retrieval pipelines on one pinned corpus and question set; skip it if you need a universal chunk-size winner without running retrieval experiments.
+>
+> **For:** code-search engineers, RAG evaluators, and repository intelligence teams  ·  **Not for:** teams looking for fabricated benchmark results or a model-only comparison
+
 A chunker cannot be judged in isolation from retrieval. This benchmark compares three complete code-retrieval pipelines on the same pinned corpus and question set, then reports retrieval quality, latency, and index cost separately.
 
 It is a **benchmark design and fillable question set**, not a claim that one strategy has already won.
@@ -87,6 +92,14 @@ A new benchmark version is required when corpus commit, parser/grammar, embeddin
 
 Sources: [`sources/sources.json`](sources/sources.json). Question artifact: [`assets/question-set.example.jsonl`](assets/question-set.example.jsonl).
 
+## Adjacent guides
+
+- [llm-test-determinism-guide](https://github.com/Simmondsun/llm-test-determinism-guide) — Use it when retrieval is inside an application whose regression tests must separate exact and sampled checks.
+- [ai-research-reproducibility](https://github.com/Lindenberg668/ai-research-reproducibility) — Use it when benchmark claims need an immutable research packet and variance record.
+- [agent-observability-field-guide](https://github.com/duthdoll45/agent-observability-field-guide) — Use it when retrieval, model calls, and downstream tool decisions need trace-level diagnosis.
+
 ## License
 
 Original benchmark protocol and example question schema are available under CC BY 4.0. Corpus and linked projects retain their own licenses.
+
+If this saved you a decision, star the repo — it is how the next reader finds it.
